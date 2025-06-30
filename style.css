@@ -1,0 +1,279 @@
+/* Reset and global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+header {
+  background: #1e1e1e;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #0af;
+  letter-spacing: 2px;
+}
+
+.cursor {
+  color: #0af;
+  font-weight: bold;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #111;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+nav a {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #00aaff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ffff;
+  transform: scale(1.1);
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section p {
+  margin-bottom: 1em;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.4);
+}
+
+footer {
+  background: #0d0d0d;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #0af;
+  margin: 0 10px;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.about-images {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-images img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#home.reveal {
+  transform: translateY(-30px);
+}
+
+#about.reveal,
+.about-images.reveal {
+  transform: translateY(50px);
+}
+
+#about.reveal.active,
+.about-images.reveal.active {
+  transform: translateY(0);
+}
+.intro-banner {
+  text-align: center;
+  margin: 100px auto 120px; /* ⬅️ Add bottom space */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#about {
+  padding-top: 100px;
+}
+
+#projects.reveal {
+  transform: scale(0.95);
+}
+
+#contact.reveal {
+  transform: translateX(50px);
+}
+
+.large-gif-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.large-gif-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.intro-banner {
+  text-align: center;
+  margin-top: 80px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.intro-banner h1 {
+  font-size: 5.2rem;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 4px;
+  opacity: 0;
+  animation: zoomIn 1.8s ease-out forwards;
+  margin-top: 100px;
+}
+
+.intro-banner .highlight {
+  color: #00ffff;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
