@@ -277,3 +277,21 @@ section h2 {
     transform: translateY(0);
   }
 }
+/* Example: project cards scale only on hover while scrolling UP */
+body.scrolling-up .card:hover {
+  transform: scale(1.07) rotate(1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+}
+/* Only animate hover when scrolling UP */
+body.scrolling-up .card:hover,
+body.scrolling-up .about-images img:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+body.scrolling-up nav a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  transform: scale(1.1);
+}

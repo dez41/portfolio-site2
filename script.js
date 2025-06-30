@@ -65,3 +65,16 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+let lastScroll = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+  if (currentScroll < lastScroll) {
+    document.body.classList.add("scrolling-up");
+    document.body.classList.remove("scrolling-down");
+  } else {
+    document.body.classList.add("scrolling-down");
+    document.body.classList.remove("scrolling-up");
+  }
+  lastScroll = currentScroll;
+});
